@@ -47,8 +47,11 @@ function generateRandomRectangles() {
     for (let i = 0; i < number_of_rectangles; i++) {
         
         let rect = createRandomRect();
+        let count = 0;
         while(!Intersect(rects,rect)){
             rect = createRandomRect();
+            count++;
+            if(count>50)break;
         }
         rects.push(rect);
 
